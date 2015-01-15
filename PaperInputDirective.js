@@ -1,5 +1,5 @@
 
-angular.module('utils',[])
+angular.module('paperInput',[])
     .directive('paperInput', function() {
         return {
             restrict: 'E',
