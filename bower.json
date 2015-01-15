@@ -1,0 +1,24 @@
+{
+  "name": "paper-input",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jl-/paper-input",
+  "authors": [
+    "jl- <i.dragonxx@gmail.com>"
+  ],
+  "description": "paper-input directive for Angular.js, with floated label, hint, error",
+  "keywords": [
+    "input",
+    "directive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.3.9"
+  }
+}

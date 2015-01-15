@@ -1,0 +1,41 @@
+.paper-input-wrapper > .input-label,
+.paper-input-wrapper > .input-hint {
+    -webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+.paper-input-wrapper > .input-label {
+    -webkit-transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    top: 30px;
+    line-height: 26px;
+    font-size: 22px;
+    color: #8ec1da;
+}
+.paper-input-wrapper > .input-label.floated {
+    -webkit-transform: scale(0.99) translateY(-28px);
+    -ms-transform: scale(0.99) translateY(-28px);
+    transform: scale(0.99) translateY(-28px);
+    color: white;
+}
+.paper-input-wrapper > .input-hint {
+    top: 64px;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 16px;
+}
+.paper-input-wrapper > .input-hint.active {
+    visibility: visible;
+    opacity: 1;
+}
+.paper-input-wrapper > input {
+    font-size: 20px;
+    z-index: 1;
+    padding-left: 0;
+}
+.paper-input-wrapper.invalid > .input-label {
+    color: red;
+}
+.paper-input-wrapper.invalid > input {
+    border-color: red;
+}
