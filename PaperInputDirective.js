@@ -15,34 +15,31 @@ angular.module('utils',[])
                 var hint = angular.element('<span class="input-hint">' + attrs.hint + '</span>');
                 element.prepend(label);
                 element.append(hint);
+                console.log(scope);
+                console.log(element);
+
 
                 // label, hint
                 input.on('focus', function(event) {
                     label.addClass('floated');
                     hint.addClass('active');
-                    if(scope.error){
-                        hint.text(scope.error);
-                        hint.addClass('active text-red');
-                    }else{
-                        hint.text(attrs.hint);
-                        hint.removeClass('text-red');
-                    }
                 });
                 input.on('blur', function(event) {
                     if (input.val() === '') {
                         label.removeClass('floated');
-                    }
-                    if(!scope.error){
-                        hint.removeClass('active');
+                        if(!scope.error){
+                            hint.removeClass('active');
+                        }
                     }
                 });
                 scope.$watch('error', function(val) {
                     if (val && val.length > 0) {
                         hint.text(val);
-                        hint.addClass('active text-red');
+                        hint.addClass('active');
+                        element.addClass('invalid');
                     }else{
                         hint.text(attrs.hint);
-                        hint.removeClass('text-red');
+                        element.removeClass('invalid');
                     }
                 });
             }
