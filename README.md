@@ -25,18 +25,19 @@ bower install angular-paper-input
     angular.module('app',['paperInput'])
         .controller('AppController',['$scope',function($scope){
             var scope = this;
-            scope.item = {};
-            scope.item.name = "";
-            $scope.$watch(function(){return scope.item.name;},function(val){
-                console.log('c');
-                scope.errors = val.length % 3 === 0 ? "" : "hea";
+            scope.account = {
+                phone: ''
+            };
+
+            $scope.$watch(function(){return scope.account.phone;},function(val){
+                scope.errors = ! val || val.length === 11 ? "" : "invalid phone number";
             });
         }]);
     </script>
 </head>
 <body ng-controller="AppController as appCtrl">
-        <paper-input class="form-group" label="Email:" hint="* your email, please." error="appCtrl.errors">
-            <input type="email" ng-model="appCtrl.item.name"  required>
+        <paper-input class="form-group" label="Phone:" hint="* your phone number, please." error="appCtrl.errors">
+            <input type="text" ng-model="appCtrl.account.phone"  required>
         </paper-input>
 </body>
 </html>
